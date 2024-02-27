@@ -18,4 +18,22 @@ class Products(models.Model):
     price = models.CharField(max_length = 200)
     def __str__(self) -> str:
         return self.productName
+    
+class Members(models.Model):
+    username = models.CharField(max_length = 200)
+    email = models.EmailField()
+    password = models.CharField(max_length = 30)
+    
+    def __str__(self) -> str:
+        return self.username
+
+class Response(models.Model):
+    fullname = models.CharField(max_length = 30)
+    email = models.EmailField()
+    subject = models.CharField(100)
+    message = models.TextField()
+
+    def __str__(self) -> str:
+        return self.fullname + self.subject
+
 
