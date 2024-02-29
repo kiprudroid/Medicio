@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members</title>
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        table{
+            border-collapse: separate;
+            border: 1px solid black;
+        }
+        td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <table class="table">
+        <thead>
+            <th>FULLNAME</th>
+            <th>USERNAME</th>
+            <th>EMAIL</th>
+            <th>PASSWORD</th>
+            <th>AGE</th>
+            <th>DOB</th>
+        </thead>
+        {% for person in member%}
+        <tr>
+            <td>{{person.fullname}}</td>
+            <td>{{person.username}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.password}}</td>
+            <td>{{person.age}}</td>
+            <td>{{person.yearOfBirth}}</td>
+        </tr>
+        {% endfor%}
+    </table>
+    
+</body>
+</html>

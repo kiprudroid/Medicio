@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <title>Details</title>
+    <style>
+        table{
+            border-collapse: separate;
+            border: 1px solid black;
+        }
+        td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    
+   <!-- <h3>Full name :</h3><h3> {{message.fullname}} </h3><br>
+   <h3>Email :</h3> <h3> {{message.email}}   </h3><br>
+   <h3>Subject</h3><h3> {{message.subject}} </h3><br>
+   <h3>Message</h3><h3> {{message.message}} </h3><br><hr> -->
+   
+    
+    <table class="table hover striped">
+        <thead>
+            <th>Fullname</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Message</th>
+        </thead>
+        {% for message in details%}
+        <tr>
+            <td>{{message.fullname}}</td>
+            <td>{{message.email}}</td>
+            <td>{{message.subject}}</td>
+            <td>{{message.message}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</table>
+</body>
+</html>

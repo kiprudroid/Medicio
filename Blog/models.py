@@ -30,10 +30,10 @@ class Members(models.Model):
 class Response(models.Model):
     fullname = models.CharField(max_length = 30)
     email = models.EmailField()
-    subject = models.CharField(100)
+    subject = models.CharField(max_length = 100)
     message = models.TextField()
 
     def __str__(self) -> str:
-        return self.fullname + self.subject
+        return self.fullname +'|-----------|'+ self.subject
 
 
