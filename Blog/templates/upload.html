@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-{% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+{% extends 'inner-page.html'%}
 
-    <title>Upload</title>
-</head>
-<body>
-    
-</body>
-</html>
+    {% block body%}
+
+    <!---Upload image--->
+
+    <form method="post" enctype="multipart/form-data" class="text-center d-block m-auto mb-4" style="position: relative;">
+        {% csrf_token %}
+
+         <h2>Upload Image</h2>
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+        <a href="{% url 'image' %}" class="btn btn-warning">Display images</a>
+    </form>
+    {% endblock %}
